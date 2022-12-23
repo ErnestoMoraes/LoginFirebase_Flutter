@@ -1,16 +1,13 @@
-# loginui
+## loginui
 
-A new Flutter project.
+Nesta série, vamos implementar AUTENTICAÇÃO em nossos aplicativos Flutter! Este vídeo abordará a interface do usuário para a tela de login e, em seguida, usaremos isso nos vídeos a seguir para adicionar autenticação de e-mail, login do Google e da Apple.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Versão 1.01 - Modern Login UI
+ - Logo
+ - Welcome back, you've been missed!
+ - Username TextField
+ - Password TextField
+ - Forgot Password?
+ - Sign in Button
+ - Or continue with
+ - Google + Apple sign in Buttons
