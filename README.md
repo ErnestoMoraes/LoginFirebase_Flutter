@@ -1,4 +1,4 @@
-## loginui
+## Login Firebase Flutter
 
 Nesta série, vamos implementar AUTENTICAÇÃO em nossos aplicativos Flutter! Este vídeo abordará a interface do usuário para a tela de login e, em seguida, usaremos isso nos vídeos a seguir para adicionar autenticação de e-mail, login do Google e da Apple.
 
