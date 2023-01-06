@@ -11,5 +11,3 @@ Nesta série, vamos implementar AUTENTICAÇÃO em nossos aplicativos Flutter! Es
  - Sign in Button
  - Or continue with
  - Google + Apple sign in Buttons
-
- Alteraçao
