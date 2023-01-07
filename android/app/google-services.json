@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "860495454922",
+    "project_id": "authfirebase-395d7",
+    "storage_bucket": "authfirebase-395d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860495454922:android:cdde67e3ab092128204a33",
+        "android_client_info": {
+          "package_name": "br.com.ernestomoraes.loginui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860495454922-47nhl5d03ihao24q14sr4ajssoqn7feb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7SaDIWQz9H92gk5lJv1lcbGo5dQFgA0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860495454922-47nhl5d03ihao24q14sr4ajssoqn7feb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

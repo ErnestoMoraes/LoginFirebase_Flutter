@@ -14,7 +14,7 @@ class MyLimeRegisterNow extends StatelessWidget {
           style: TextStyle(color: Colors.grey[700]),
         ),
         SizedBox(width: size.height * 0.004),
-        Text(
+        const Text(
           'Register now',
           style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
         ),
