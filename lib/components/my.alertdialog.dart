@@ -7,9 +7,11 @@ class MyAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: Colors.blue[900],
       title: Text(
+        textAlign: TextAlign.center,
         phrase,
-        style: const TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 18, color: Colors.white),
       ),
     );
   }

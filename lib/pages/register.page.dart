@@ -11,19 +11,20 @@ import 'package:loginui/components/my.squaretile.dart';
 import 'package:loginui/components/my.textfield.dart';
 import 'package:loginui/services/auth.service.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
-  void signUserIn() async {
+  void signUserUp() async {
     showDialog(
       context: context,
       builder: (context) {
@@ -37,25 +38,24 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     try {
-      if (emailcontroller.text.isEmpty) {
-        Navigator.of(context).pop();
-        showErrorMessage('Check your email');
-      } else if (passwordcontroller.text.isEmpty) {
-        Navigator.of(context).pop();
-        showErrorMessage('Check your password');
-      } else {
-        await FirebaseAuth.instance.signInWithEmailAndPassword(
+      if (passwordcontroller.text == confirmPasswordController.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailcontroller.text,
           password: passwordcontroller.text,
         );
         Navigator.of(context).pop();
+      } else if (confirmPasswordController.text.isEmpty ||
+          passwordcontroller.text.isEmpty) {
+        Navigator.of(context).pop();
+        showErrorMessage('Password void!');
+      } else {
+        Navigator.of(context).pop();
+        showErrorMessage('Passwords not match!');
       }
     } on FirebaseAuthException catch (e) {
       Navigator.of(context).pop();
       if (e.code == 'unknown') {
-        showErrorMessage('Check your data');
-      } else if (e.code == 'user-not-found') {
-        showErrorMessage('Email not register');
+        showErrorMessage('Check your data!');
       } else {
         showErrorMessage(e.code);
       }
@@ -93,10 +93,10 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: size.height * 0.04),
-                const Icon(Icons.lock, size: 100),
+                const Icon(Icons.lock_open_rounded, size: 100),
                 SizedBox(height: size.height * 0.04),
                 Text(
-                  'Welcome back, you\'ve been missed!',
+                  'Let\'s create an account for you!',
                   style: TextStyle(color: Colors.grey[700], fontSize: 16),
                 ),
                 SizedBox(height: size.height * 0.04),
@@ -112,11 +112,13 @@ class _LoginPageState extends State<LoginPage> {
                   obscuredtext: true,
                 ),
                 SizedBox(height: size.height * 0.02),
-                const MyForgotPassord(
-                  phrase: 'Forgot Password?',
+                MyTextField(
+                  controller: confirmPasswordController,
+                  hintext: 'Confirm Password',
+                  obscuredtext: true,
                 ),
-                SizedBox(height: size.height * 0.04),
-                MyButtom(ontap: signUserIn, phrase: 'Sign In'),
+                SizedBox(height: size.height * 0.02),
+                MyButtom(ontap: signUserUp, phrase: 'Sign Up'),
                 SizedBox(height: size.height * 0.04),
                 const MyDividerWith(phrase: 'Or continue with'),
                 SizedBox(height: size.height * 0.04),
@@ -136,8 +138,8 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: size.height * 0.04),
                 MyLimeRegisterNow(
                   onTap: widget.onTap,
-                  phraseFirst: 'Not a member',
-                  phraseSecound: 'Register now',
+                  phraseFirst: 'Already have an account?',
+                  phraseSecound: 'Login now',
                 ),
                 SizedBox(height: size.height * 0.04),
               ],

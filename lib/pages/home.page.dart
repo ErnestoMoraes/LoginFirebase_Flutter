@@ -19,9 +19,18 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text(
-          'LOGGED IN AS: ${user.email!}',
-          style: const TextStyle(fontSize: 18),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'LOGGED IN AS:',
+              style: TextStyle(fontSize: 18),
+            ),
+            Text(
+              user.email!,
+              style: const TextStyle(fontSize: 18),
+            ),
+          ],
         ),
       ),
     );

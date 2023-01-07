@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyLimeRegisterNow extends StatelessWidget {
-  const MyLimeRegisterNow({super.key});
+  final String phraseFirst;
+  final String phraseSecound;
+  final Function()? onTap;
+  const MyLimeRegisterNow(
+      {super.key,
+      required this.onTap,
+      required this.phraseFirst,
+      required this.phraseSecound});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +17,19 @@ class MyLimeRegisterNow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Not a member?',
+          phraseFirst,
           style: TextStyle(color: Colors.grey[700]),
         ),
         SizedBox(width: size.height * 0.004),
-        const Text(
-          'Register now',
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+        GestureDetector(
+          onTap: onTap,
+          child: Text(
+            phraseSecound,
+            style: const TextStyle(
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ],
     );
